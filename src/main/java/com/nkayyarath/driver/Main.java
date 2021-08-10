@@ -1,4 +1,4 @@
-package com.company;
+package com.nkayyarath.driver;
 
 public class Main {
 

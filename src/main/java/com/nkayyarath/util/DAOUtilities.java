@@ -1,13 +1,14 @@
-package utility;
+package com.nkayyarath.util;
+
+import com.nkayyarath.model.Customer;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.SQLClientInfoException;
 import java.sql.SQLException;
 
 public class DAOUtilities {
     private static final String CONNECTION_USERNAME = "root";
-    private static final String CONNECTION_PASSWORD = "00112233445566";
+    private static final String CONNECTION_PASSWORD = "0011223344";
     private static final String URL = "jbdc:MySQL://localhost:33066/project0";
     private static Connection connection;
 
@@ -25,6 +26,4 @@ public class DAOUtilities {
         }
         return connection;
     }
-
-    //DAO methods to get their implementations
 }

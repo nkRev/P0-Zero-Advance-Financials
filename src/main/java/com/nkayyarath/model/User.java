@@ -1,22 +1,18 @@
-package main.java.model;
+package com.nkayyarath.model;
 
 public class User {
     private String username;
     private String password;
-    private String firstName;
-    private String lastName;
+    private int userID;
     private boolean isLoggedIn;
 
     public User() {
-        super();
     }
 
-    public User(String username, String password, String firstName, String lastName, boolean isLoggedIn) {
-        super();
+    public User(String username, String password, int userID, boolean isLoggedIn) {
         this.username = username;
         this.password = password;
-        this.firstName = firstName;
-        this.lastName = lastName;
+        this.userID = userID;
         this.isLoggedIn = isLoggedIn;
     }
 
@@ -36,20 +32,12 @@ public class User {
         this.password = password;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public int getUserID() {
+        return userID;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setUserID(int userID) {
+        this.userID = userID;
     }
 
     public boolean isLoggedIn() {
@@ -60,4 +48,14 @@ public class User {
         isLoggedIn = loggedIn;
     }
 
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", userID=" + userID +
+                ", isLoggedIn=" + isLoggedIn +
+                '}';
+    }
 }
