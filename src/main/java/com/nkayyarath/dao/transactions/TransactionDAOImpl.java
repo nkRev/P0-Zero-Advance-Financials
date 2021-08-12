@@ -9,12 +9,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.ResourceBundle;
 
 public class TransactionDAOImpl implements TransactionDAO {
     static PreparedStatement ps;
-    Connection connection;
-    ResourceBundle rb = ResourceBundle.getBundle("com/nkayyarath/dao/transactions/TransactQuery");
+    Connection connection = null;
 
     public TransactionDAOImpl() {
         try {
@@ -26,58 +24,46 @@ public class TransactionDAOImpl implements TransactionDAO {
 
     @Override
     public void addTransaction(Transaction transaction) throws SQLException {
-        final String sql = rb.getString("addTransaction");
+        final String sql = "INSERT INTO transactions (amount, account_number, transaction_type, date) VALUES (?, ?, ?, ?)";
         ps = connection.prepareStatement(sql);
 
         ps.setDouble(1, transaction.getAmount());
         ps.setInt(2, transaction.getAccountNumber());
-        ps.setDate(3, transaction.getDate());
+        ps.setString(3, transaction.getTransactionType());
+        ps.setDate(4, transaction.getDate());
 
-        int count = ps.executeUpdate();
-        if (count > 0) {
-            System.out.println("Transaction completed.");
-        } else {
-            System.out.println("Transaction server was hacked.");
-        }
+        ps.executeUpdate();
+
     }
 
     @Override
     public void updateTransaction(Transaction transaction) throws SQLException {
-        final String sql = rb.getString("updateTransaction");
+        final String sql = "UPDATE transactions SET amount = ?, date = ? WHERE account_number = ?";
         ps = connection.prepareStatement(sql);
 
         ps.setDouble(1, transaction.getAmount());
         ps.setDate(2, transaction.getDate());
         ps.setInt(3, transaction.getAccountNumber());
 
-        int count = ps.getUpdateCount();
-        if (count > 0) {
-            System.out.println("Transaction updated.");
-        } else {
-            System.out.println("Something went wrong, please contact a support agent");
-        }
+        ps.getUpdateCount();
+
     }
 
     @Override
     public void deleteTransaction(int accountNumber) throws SQLException {
-        final String sql = rb.getString("deleteTransaction");
+        final String sql = "DELETE FROM transactions WHERE account_number = ?";
         ps = connection.prepareStatement(sql);
 
         ps.setInt(1, accountNumber);
 
-        int count = ps.executeUpdate();
-        if (count > 0) {
-            System.out.println("Transaction deleted.");
-        } else {
-            System.out.println("Proceed to yell at developer when something goes wrong.");
-        }
+        ps.executeUpdate();
 
     }
 
     @Override
     public List<Transaction> getAllTransactions() throws SQLException {
         List<Transaction> transactionList = new ArrayList<>();
-        final String sql = rb.getString("selectAllTransactions");
+        final String sql = "call project0.sp_get_transactions() ";
         ps = connection.prepareStatement(sql);
 
         ResultSet rs = ps.executeQuery();
@@ -96,7 +82,7 @@ public class TransactionDAOImpl implements TransactionDAO {
 
     @Override
     public Transaction getTransactionByID(int accountNumber) throws SQLException {
-        final String sql = rb.getString("selectByAccNumber");
+        final String sql = "SELECT * FROM transactions WHERE account_number = ?";
         ps = connection.prepareStatement(sql);
 
         ps.setInt(1, accountNumber);

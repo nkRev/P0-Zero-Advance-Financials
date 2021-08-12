@@ -15,4 +15,6 @@ public interface CustomerDAO {
     List<Customer> getCustomer() throws SQLException;
 
     Customer customerByID(int id) throws SQLException;
+
+    Customer getCustomerBySSN(String SSN) throws SQLException;
 }

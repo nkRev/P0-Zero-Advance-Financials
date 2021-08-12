@@ -7,9 +7,9 @@ public class CustomerDAOFactory {
 
     }
 
-    public CustomerDAO getCustomerDAO() {
+    public static CustomerDAO getCustomerDAO() {
         if (dao == null) {
-            dao = new CustomerDAOimpl();
+            dao = new CustomerDAOImpl();
         }
         return dao;
     }

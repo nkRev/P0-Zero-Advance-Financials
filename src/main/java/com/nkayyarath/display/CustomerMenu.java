@@ -8,10 +8,9 @@ public class CustomerMenu implements Display {
         System.out.println("1. Deposit");
         System.out.println("2. Withdraw");
         System.out.println("3. Money Transfer");
-        System.out.println("3. Update information");
         System.out.println("4. Apply for a new account");
         System.out.println("5. View an account balance");
-        System.out.println("0. To return");
+        System.out.println("0. Logout");
         System.out.println("***********************");
     }
 }

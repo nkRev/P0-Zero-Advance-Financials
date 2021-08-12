@@ -16,8 +16,9 @@ public interface UserDAO {
 
     List<User> getUsers() throws SQLException;
 
-    String login(String username);
+    void authenticateCustomerLogin(String username, String password) throws SQLException;
 
+    void authenticateEmployeeLogin(String username, String password) throws SQLException;
 
 
 }

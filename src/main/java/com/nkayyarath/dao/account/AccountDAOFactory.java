@@ -7,7 +7,7 @@ public class AccountDAOFactory {
 
     }
 
-    public AccountDAO getAccountDAO() {
+    public static AccountDAO getAccountDAO() {
         if (dao == null) {
             dao = new AccountDAOImpl();
         }

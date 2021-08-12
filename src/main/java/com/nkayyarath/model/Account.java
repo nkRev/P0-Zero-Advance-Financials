@@ -4,23 +4,50 @@ import java.sql.Date;
 
 public class Account {
     private int accountNumber, customerID;
-    private double balance, openingBalance, interest;
-    private String accountName, accountStatus;
+    private double balance, openingBalance, interest, depositAmt, withdrawAmt;
+    private String accountName, accountStatus, transferStatus;
     private Date dateOpened;
 
 
     public Account() {
     }
 
-    public Account(int accountNumber, int customerID, double balance, double openingBalance, double interest, String accountName, Date dateOpened, String accountStatus) {
+    public Account(int accountNumber, int customerID, double balance, double openingBalance, double interest, double depositAmt, double withdrawAmt, String accountName, String accountStatus, String transferStatus, Date dateOpened) {
         this.accountNumber = accountNumber;
         this.customerID = customerID;
         this.balance = balance;
         this.openingBalance = openingBalance;
         this.interest = interest;
+        this.depositAmt = depositAmt;
+        this.withdrawAmt = withdrawAmt;
         this.accountName = accountName;
-        this.dateOpened = dateOpened;
         this.accountStatus = accountStatus;
+        this.transferStatus = transferStatus;
+        this.dateOpened = dateOpened;
+    }
+
+    public String getTransferStatus() {
+        return transferStatus;
+    }
+
+    public void setTransferStatus(String transferStatus) {
+        this.transferStatus = transferStatus;
+    }
+
+    public double getDepositAmt() {
+        return depositAmt;
+    }
+
+    public void setDepositAmt(double depositAmt) {
+        this.depositAmt = depositAmt;
+    }
+
+    public double getWithdrawAmt() {
+        return withdrawAmt;
+    }
+
+    public void setWithdrawAmt(double withdrawAmt) {
+        this.withdrawAmt = withdrawAmt;
     }
 
     public String getAccountStatus() {
@@ -93,9 +120,10 @@ public class Account {
                 "accountNumber=" + accountNumber +
                 ", customerID=" + customerID +
                 ", balance=" + balance +
-                ", openingBalance=" + openingBalance +
                 ", interest=" + interest +
                 ", accountName='" + accountName + '\'' +
+                ", accountStatus='" + accountStatus + '\'' +
+                ", transferStatus='" + transferStatus + '\'' +
                 ", dateOpened=" + dateOpened +
                 '}';
     }

@@ -7,7 +7,7 @@ public class TransactionDAOFactory {
 
     }
 
-    public TransactionDAO getTransactionDAO() {
+    public static TransactionDAO getTransactionDAO() {
         if (dao == null) {
             dao = new TransactionDAOImpl();
         }
