@@ -16,6 +16,7 @@ import java.sql.SQLException;
 
 
 import static com.nkayyarath.driver.Main.in;
+import static com.nkayyarath.driver.Main.menuLog;
 
 public class CMenu {
 
@@ -39,6 +40,7 @@ public class CMenu {
         boolean finished = false;
         int input;
 
+        menuLog.info("Reached Customer Menu");
         do {
             menu.display();
             System.out.println(">> ");
@@ -46,6 +48,7 @@ public class CMenu {
             switch (input) {
                 //deposit
                 case 1:
+                    menuLog.info("Making a deposit");
                     System.out.println("Specify account number for deposit ");
                     int accountNumber = in.nextInt();
 
@@ -70,6 +73,7 @@ public class CMenu {
 
                 //withdraw
                 case 2:
+                    menuLog.info("Making a withdraw");
                     System.out.println("Please specify account name: ");
                     String accountName = in.next();
 
@@ -106,6 +110,7 @@ public class CMenu {
 
                 //Money Transfer/deposit to account
                 case 3:
+                    menuLog.info("Making a money transfer");
                     System.out.println("Please specify account name: ");
                     accountName = in.next();
 
@@ -188,7 +193,7 @@ public class CMenu {
 
                 //apply for new bank account
                 case 4:
-                    System.out.println("Bank Account Creation Service");
+                    menuLog.info("Bank Account Creation Service");
 
                     System.out.println("Name of account: ");
                     accountName = in.next().toLowerCase();
@@ -247,6 +252,7 @@ public class CMenu {
                     break;
                 ///view your balance
                 case 5:
+                    menuLog.info("Viewing balance");
                     System.out.println("Account number: ");
                     accountNumber = in.nextInt();
                     account = accountDAO.accountByNumber(accountNumber);
@@ -255,8 +261,8 @@ public class CMenu {
 
                 //go back to main menu
                 case 0:
+                    menuLog.info("Logging out");
                     LandingMenu mainMenu = new LandingMenu();
-                    System.out.println("Returning...");
                     finished = true;
                     mainMenu.mainMenu();
                     break;

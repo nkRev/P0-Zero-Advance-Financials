@@ -12,6 +12,7 @@ import java.io.Console;
 import java.sql.SQLException;
 
 import static com.nkayyarath.driver.Main.in;
+import static com.nkayyarath.driver.Main.menuLog;
 
 public class LandingMenu {
     public void mainMenu() throws SQLException {
@@ -21,16 +22,16 @@ public class LandingMenu {
         User user = new User();
         UserDAO userDAO = UserDaoFactory.getUserDAO();
         LandingDisplay mainMenu = new LandingDisplay();
-
+        menuLog.debug("Reached Landing Menu");
 
         do {
             mainMenu.display();
             System.out.print(">> ");
             int input = in.nextInt();
             switch (input) {
-                //when a user register's for a User login and becomes a customer.
+                //become a customer.
                 case 1:
-
+                    menuLog.info("New Customer Account");
                     //Create Customer ACC
                     System.out.println("please enter first name: ");
                     String firstName = in.next();
@@ -76,7 +77,8 @@ public class LandingMenu {
                     System.out.println(customer);
                     break;
                 case 2:
-                    System.out.println("*******************\nCreate a User Account\n");
+                    System.out.println("*******************");
+                    menuLog.info("Create a new Account");
                     System.out.println("Username: ");
                     String username = in.nextLine();
                     in.nextLine();
@@ -95,6 +97,7 @@ public class LandingMenu {
                 //log-in for customer
                 case 3:
                     System.out.println("***********************");
+                    menuLog.info("Customer Login");
                     System.out.println("username: ");
                     username = in.next();
 
@@ -108,6 +111,7 @@ public class LandingMenu {
                 case 4:
                     //EmpMenu.employeeMenu();
                     System.out.println("***********************");
+                    menuLog.info("Employee Login");
                     System.out.println("username: ");
                     username = in.next();
 
@@ -118,6 +122,7 @@ public class LandingMenu {
                     break;
                 //quit
                 case 0:
+                    menuLog.info("Quitting");
                     System.out.println("Thank You for doing business with Zero Advance Financials!");
                     finished = true;
                     break;

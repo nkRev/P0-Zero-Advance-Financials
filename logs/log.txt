@@ -1,0 +1,4 @@
+2021-08-12 03:47:06 INFO  Main:14 - Program started
+2021-08-12 03:47:15 INFO  CMenu:43 - Reached Customer Menu
+2021-08-12 03:55:44 INFO  Main:14 - Program started
+2021-08-12 03:55:46 INFO  LandingMenu:125 - Thank You for doing business with Zero Advance Financials!

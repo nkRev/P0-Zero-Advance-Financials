@@ -17,6 +17,7 @@ import java.util.List;
 
 
 import static com.nkayyarath.driver.Main.in;
+import static com.nkayyarath.driver.Main.menuLog;
 
 public class EmpMenu {
 
@@ -38,7 +39,7 @@ public class EmpMenu {
 
         boolean finished = false;
         int input;
-
+        menuLog.info("Reached Employee Menu");
         do {
             menu.display();
             System.out.print(">> ");
@@ -47,6 +48,7 @@ public class EmpMenu {
             switch (input) {
                 //approve or reject an account
                 case 1:
+                    menuLog.info("Viewing Pending Accounts");
                     System.out.println("Listing pending accounts");
                     Account pAccount = new Account();
                     pAccount.setAccountStatus("pending");
@@ -87,6 +89,7 @@ public class EmpMenu {
 
                 //view customer's accounts
                 case 2:
+                    menuLog.info("Viewing customer account");
                     System.out.println("Customer ID: ");
                     cust_id = in.nextInt();
 
@@ -102,6 +105,7 @@ public class EmpMenu {
 
                 //view all transactions
                 case 3:
+                    menuLog.info("viewing all transactions");
                     System.out.println("*****************************************");
                     System.out.println("Printing all transactions...");
                     System.out.println();
@@ -113,8 +117,9 @@ public class EmpMenu {
                     }
                     break;
                 case 0:
+                    menuLog.info("Employee Logout");
                     LandingMenu mainMenu = new LandingMenu();
-                    System.out.println("Returning...");
+                    System.out.println("Logging out");
                     finished = true;
                     mainMenu.mainMenu();
                     break;
