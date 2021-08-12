@@ -80,8 +80,8 @@ public class LandingMenu {
                     System.out.println("*******************");
                     menuLog.info("Create a new Account");
                     System.out.println("Username: ");
-                    String username = in.nextLine();
-                    in.nextLine();
+                    String username = in.next();
+
 
                     System.out.println("Password (alphanumeric no white space): ");
                     String strpw = in.next();

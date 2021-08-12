@@ -31,7 +31,6 @@ public class UserDAOImpl implements UserDAO {
         ps = connection.prepareStatement(sql);
 
         ps.setString(1, user.getUsername());
-        System.out.println(user.getUsername());
         ps.setString(2, user.getPassword());
         ps.setString(3, user.getUserType());
 

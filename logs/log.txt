@@ -2,3 +2,25 @@
 2021-08-12 03:47:15 INFO  CMenu:43 - Reached Customer Menu
 2021-08-12 03:55:44 INFO  Main:14 - Program started
 2021-08-12 03:55:46 INFO  LandingMenu:125 - Thank You for doing business with Zero Advance Financials!
+2021-08-12 10:05:18 INFO  Main:14 - Program started
+2021-08-12 10:05:25 INFO  LandingMenu:81 - Create a new Account
+2021-08-12 10:10:57 INFO  Main:14 - Program started
+2021-08-12 10:11:01 INFO  LandingMenu:81 - Create a new Account
+2021-08-12 10:12:54 INFO  LandingMenu:114 - Employee Login
+2021-08-12 10:13:03 INFO  EmpMenu:42 - Reached Employee Menu
+2021-08-12 10:13:06 INFO  EmpMenu:120 - Employee Logout
+2021-08-12 10:13:08 INFO  LandingMenu:100 - Customer Login
+2021-08-12 10:13:16 INFO  CMenu:43 - Reached Customer Menu
+2021-08-12 10:13:25 INFO  CMenu:255 - Viewing balance
+2021-08-12 10:18:49 INFO  CMenu:264 - Logging out
+2021-08-12 10:18:54 INFO  LandingMenu:125 - Quitting
+2021-08-12 10:18:56 INFO  LandingMenu:125 - Quitting
+2021-08-12 10:18:57 INFO  LandingMenu:125 - Quitting
+2021-08-12 10:38:25 INFO  Main:14 - Program started
+2021-08-12 12:09:21 INFO  Main:14 - Program started
+2021-08-12 13:50:25 INFO  Main:14 - Program started
+2021-08-12 13:50:48 INFO  LandingMenu:34 - New Customer Account
+2021-08-12 13:51:23 INFO  LandingMenu:81 - Create a new Account
+2021-08-12 13:51:53 INFO  LandingMenu:100 - Customer Login
+2021-08-12 13:52:01 INFO  CMenu:43 - Reached Customer Menu
+2021-08-12 13:52:10 INFO  CMenu:196 - Bank Account Creation Service
